@@ -8,6 +8,7 @@
   imports = [
     ./options.nix
     ./keymapping.nix
+    ./settings.nix
     ./plugins/colorscheme.nix
     ./plugins/bufferline.nix
     ./plugins/telescope.nix
@@ -34,6 +35,5 @@
     ./plugins/oil.nix
     ./plugins/oil.nix
     ./plugins/schemastore.nix
-
   ];
 }
