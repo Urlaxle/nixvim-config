@@ -2,12 +2,6 @@
 {
   globalOpts = {
 
-    # Tabs and stuff
-    tabstop = 2;
-    shiftwidth = 2;
-    expandtab = true;
-    softtabstop = 2;
-
     # Line numbers
     number = true;
     relativenumber = true;
@@ -120,7 +114,16 @@
   };
 
   extraConfigLua = ''
-    vim.o.signcolumn = "yes"
+      vim.o.signcolumn = "yes"
+     vim.api.nvim_create_autocmd("BufEnter", {
+      pattern = "*",
+      callback = function()
+        vim.o.tabstop = 2
+        vim.o.shiftwidth = 2
+        vim.o.softtabstop = 2
+        vim.o.expandtab = true
+      end,
+    })
   '';
 
 }
