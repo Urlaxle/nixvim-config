@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   plugins = {
     lsp-format = {
       enable = true;
@@ -55,16 +56,18 @@
         #     # };
         #   };
         # };
-        gopls = { # Golang
+        gopls = {
+          # Golang
           enable = true;
           autostart = true;
         };
-       
-        lua_ls = { # Lua
+
+        lua_ls = {
+          # Lua
           enable = true;
           settings.telemetry.enable = false;
         };
-       
+
         # Rust
         rust_analyzer = {
           enable = true;

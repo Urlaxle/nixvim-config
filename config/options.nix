@@ -1,5 +1,13 @@
-{self, ...}: {
+{ self, ... }:
+{
   globalOpts = {
+
+    # Tabs and stuff
+    tabstop = 2;
+    shiftwidth = 2;
+    expandtab = true;
+    softtabstop = 2;
+
     # Line numbers
     number = true;
     relativenumber = true;
@@ -8,7 +16,11 @@
     termguicolors = true;
 
     # Have a better completion experience
-    completeopt = [ "menuone" "noselect" "noinsert" ];
+    completeopt = [
+      "menuone"
+      "noselect"
+      "noinsert"
+    ];
 
     # Always show the signcolumn, otherwise text would be shifted when displaying error icons
     signcolumn = "yes";
@@ -19,7 +31,7 @@
     # Search
     ignorecase = true;
     smartcase = true;
-  
+
     # Configure how new splits should be opened
     splitright = true;
     splitbelow = true;
@@ -31,7 +43,7 @@
     # System clipboard support, needs xclip/wl-clipboard
     clipboard = {
       providers = {
-        wl-copy.enable = true; # Wayland 
+        wl-copy.enable = true; # Wayland
         xsel.enable = true; # For X11
       };
       register = "unnamedplus";
@@ -87,7 +99,9 @@
   autoCmd = [
     {
       event = [ "VimEnter" ];
-      callback = { __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end"; };
+      callback = {
+        __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end";
+      };
     }
   ];
   #autoCmd = [
@@ -104,4 +118,9 @@
     Comment.underline = true;
     Comment.bold = true;
   };
+
+  extraConfigLua = ''
+    vim.o.signcolumn = "yes"
+  '';
+
 }
