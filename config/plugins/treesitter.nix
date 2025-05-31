@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   plugins = {
     treesitter = {
       enable = true;
@@ -30,6 +31,11 @@
   };
   extraConfigLua = ''
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+    vim.filetype.add({
+      extension = {
+        sdf = "xml", -- or whichever filetype you map to
+      },
+    })
   '';
 }
-
