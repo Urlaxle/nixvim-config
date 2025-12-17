@@ -11,29 +11,34 @@
     ./plugins/colorscheme.nix
     ./plugins/bufferline.nix
     ./plugins/telescope.nix
+    ./plugins/neotree.nix
     ./plugins/treesitter.nix
     ./plugins/lualine.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
-    ./plugins/comment.nix
-    ./plugins/icons.nix
-    ./plugins/trouble.nix
-    ./plugins/trunk.nix
-    ./plugins/autopairs.nix
-    ./plugins/blink.nix
     ./plugins/cmp.nix
-    ./plugins/comment-box.nix
-    ./plugins/conform.nix
-    ./plugins/gitsigns.nix
-    ./plugins/lz-n.nix
-    ./plugins/markview.nix
-    ./plugins/neoscroll.nix
-    ./plugins/neotree.nix
-    ./plugins/noice.nix
-    ./plugins/none-ls.nix
-    ./plugins/oil.nix
-    ./plugins/oil.nix
-    ./plugins/schemastore.nix
 
+    # Allows me to make comments with <leader>/ 
+    ./plugins/comment.nix
+
+    # Adds Nerdfont icons
+    ./plugins/icons.nix
+
+    # Makes symbols such as ( come with an autooclosing pair
+    ./plugins/autopairs.nix
+
+    # Comments in boxes 
+    ./plugins/comment-box.nix
   ];
 }
+
+# To add one with time 
+  #imports = [
+    #./plugins/trouble.nix
+    #./plugins/blink.nix
+    #./plugins/gitsigns.nix
+    #./plugins/lz-n.nix
+    #./plugins/markview.nix
+    #./plugins/none-ls.nix
+#
+#  ];

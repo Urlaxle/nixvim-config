@@ -13,9 +13,19 @@
         python = [ "pylint" ];
         sh = [ "shellcheck" ];
         yaml = [ "yamllint" ];
+        cpp = [ "clangtidy" ];
+        c = [ "clangtidy" ];
       };
 
       linters = {
+        clangtidy = {
+          cmd = lib.getExe pkgs.clang-tools;
+          args = [
+            "clang-tidy"
+            "--quiet"
+            "--"
+          ];
+        };
         deadnix = {
           cmd = lib.getExe pkgs.deadnix;
         };
