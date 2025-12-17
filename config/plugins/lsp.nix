@@ -178,4 +178,18 @@
       end
     end;
   '';
+  plugins.lsp.keymaps.diagnostic = {
+  "<leader>cd" = {
+    action = "open_float";
+    desc = "Line diagnostics";
+  };
+  "cn" = {
+    action = "goto_prev";
+    desc = "Previous diagnostic";
+  };
+  "cp" = {
+    action = "goto_next";
+    desc = "Next diagnostic";
+  };
+};
 }

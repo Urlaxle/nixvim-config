@@ -17,6 +17,7 @@
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/cmp.nix
+    ./plugins/blink.nix
 
     # Allows me to make comments with <leader>/ 
     ./plugins/comment.nix
@@ -35,7 +36,6 @@
 # To add one with time 
   #imports = [
     #./plugins/trouble.nix
-    #./plugins/blink.nix
     #./plugins/gitsigns.nix
     #./plugins/lz-n.nix
     #./plugins/markview.nix

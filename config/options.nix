@@ -1,10 +1,14 @@
 { self, ... }:
 {
+  opts = {
+    number = true;
+    relativenumber = true;
+  };
   globalOpts = {
 
     # Line numbers
-    number = true;
-    relativenumber = true;
+    #number = true;
+    #relativenumber = true;
 
     # Enable more colors (24-bit)
     termguicolors = true;
