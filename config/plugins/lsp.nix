@@ -192,4 +192,19 @@
     desc = "Next diagnostic";
   };
 };
+
+
+plugins.lsp.servers.pyright = {
+  settings = {
+    python = {
+      pythonPath = "/usr/bin/python3"; # change to your real sys.executable
+      analysis = {
+        autoSearchPaths = true;
+        useLibraryCodeForTypes = true;
+      };
+    };
+  };
+};
+
+
 }

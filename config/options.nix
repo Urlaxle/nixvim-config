@@ -117,17 +117,26 @@
     Comment.bold = true;
   };
 
+
   extraConfigLua = ''
-      vim.o.signcolumn = "yes"
-     vim.api.nvim_create_autocmd("BufEnter", {
-      pattern = "*",
-      callback = function()
-        vim.o.tabstop = 2
-        vim.o.shiftwidth = 2
-        vim.o.softtabstop = 2
-        vim.o.expandtab = true
-      end,
-    })
-  '';
+  vim.o.signcolumn = "yes"
+
+  -- Global defaults (most files): 2 spaces
+  vim.opt.tabstop = 2
+  vim.opt.shiftwidth = 2
+  vim.opt.softtabstop = 2
+  vim.opt.expandtab = true
+
+  -- Python: 4 spaces
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
+      vim.opt_local.softtabstop = 4
+      vim.opt_local.expandtab = true
+    end,
+  })
+'';
 
 }

@@ -10,7 +10,7 @@
         dockerfile = [ "hadolint" ];
         lua = [ "luacheck" ];
         nix = [ "deadnix" "nix" ] ++ lib.optionals (!config.plugins.lsp.servers.statix.enable) [ "statix" ];
-        python = [ "pylint" ];
+        #python = [ "pylint" ];
         sh = [ "shellcheck" ];
         yaml = [ "yamllint" ];
         cpp = [ "clangtidy" ];
